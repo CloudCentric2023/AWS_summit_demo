@@ -233,6 +233,8 @@ devpetは以下の3つのコンポーネントで構成される：
 - kibun (きぶん)
 - lastInteractionAt
 - isDead
+- diedAt (死亡時のみ)
+- causeOfDeath (死亡時のみ)
 - createdAt
 - updatedAt
 
