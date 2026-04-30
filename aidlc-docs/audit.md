@@ -308,3 +308,33 @@
 **Context**: Application Design - User confirming code separation across Go modules
 
 ---
+
+## Units Generation - Plan and Questions Created
+**Timestamp**: 2026-04-30T01:05:00Z
+**AI Response**: "ユニット生成計画と2つの質問を作成。unit-of-work-plan.md に保存。ユニット分解はアプリケーション設計の5モジュール構成に基づく。実装順序と実行方式について質問。"
+**Context**: Units Generation - Part 1 Planning, awaiting user answers
+
+---
+
+## Units Generation - Answers Received
+**Timestamp**: 2026-04-30T01:07:00Z
+**User Input**: "完了"
+**AI Response**: "回答を読み込み。Q1: B（TUI優先: shared→cli→cdk→backend→web）、Q2: B（段階まとめ方式）。矛盾なし。ユニットドキュメント生成に進む。"
+**Context**: Units Generation - Part 1 answers received, proceeding to Part 2 generation
+
+---
+
+## Units Generation - Artifacts Generated
+**Timestamp**: 2026-04-30T01:08:00Z
+**AI Response**: "ユニット生成ドキュメントを作成。unit-of-work.md（5ユニット定義、TUI優先実装順序、段階まとめ方式）、unit-of-work-dependency.md（依存関係マトリクス、ビルド時/デプロイ時/ランタイム依存）、unit-of-work-story-map.md（FR-01〜FR-11のユニットマッピング）。"
+**Context**: Units Generation - All artifacts generated, awaiting user approval
+
+---
+
+## Units Generation - User Question (CDK Snapshot Testing)
+**Timestamp**: 2026-04-30T01:10:00Z
+**User Input**: "NFR-05: テストについて、cdkのスナップショットテストを追加するのはどうか？"
+**AI Response**: "CDKスナップショットテストの追加を推奨し、ユニットマッピングを更新"
+**Context**: Units Generation - User suggesting CDK snapshot testing addition
+
+---

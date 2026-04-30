@@ -35,7 +35,7 @@
 - [ ] User Stories - SKIP (要件分析で十分)
 - [x] Workflow Planning
 - [x] Application Design - EXECUTE
-- [ ] Units Generation - EXECUTE
+- [x] Units Generation - EXECUTE
 
 ### 🟢 CONSTRUCTION PHASE (per-unit)
 - [ ] Functional Design - EXECUTE
