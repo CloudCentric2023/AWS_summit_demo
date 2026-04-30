@@ -49,7 +49,7 @@
 - [ ] Operations - PLACEHOLDER
 
 ## Current Status
-- **Lifecycle Phase**: INCEPTION
-- **Current Stage**: INCEPTION - Application Design Complete
-- **Next Stage**: Units Generation
-- **Status**: Approved, ready to proceed
+- **Lifecycle Phase**: CONSTRUCTION
+- **Current Stage**: CONSTRUCTION - Functional Design (全ユニット)
+- **Next Stage**: Functional Design Plan & Questions
+- **Status**: In Progress

@@ -338,3 +338,169 @@
 **Context**: Units Generation - User suggesting CDK snapshot testing addition
 
 ---
+
+## Construction Phase - Session Start
+**Timestamp**: 2026-04-30T02:00:00Z
+**User Input**: "AI-DLCでインセプションフェーズが完了した。これからコンストラクションフェーズを実行したい。日本語で実行して"
+**AI Response**: "コンストラクションフェーズを開始。セッション継続性チェック完了。インセプションフェーズの全成果物を読み込み済み。段階まとめ方式に従い、全ユニットの機能設計から開始する。"
+**Context**: Construction Phase initiation - User requested construction phase execution in Japanese
+
+### Loaded Artifacts:
+- aidlc-state.md (プロジェクト状態)
+- requirements.md (要件定義書: FR-01〜FR-11, NFR-01〜NFR-06)
+- components.md (コンポーネント定義: 5モジュール)
+- component-methods.md (メソッドシグネチャ)
+- services.md (サービス定義)
+- component-dependency.md (依存関係)
+- unit-of-work.md (ユニット定義: 5ユニット)
+- unit-of-work-dependency.md (ユニット依存関係)
+- unit-of-work-story-map.md (機能要件マッピング)
+- execution-plan.md (実行計画)
+- Security Baseline extension (SECURITY-01〜15): Enabled
+- Property-Based Testing extension (PBT-01〜10, Full mode): Enabled
+
+---
+
+## Functional Design - Plan and Questions Created
+**Timestamp**: 2026-04-30T02:05:00Z
+**AI Response**: "機能設計計画（all-units-functional-design-plan.md）と質問ファイル（functional-design-questions.md）を作成。段階まとめ方式に従い、全5ユニットの機能設計を一括で実施。17の設計質問を作成（shared: Q1-Q4, cli: Q5-Q12, backend: Q13-Q15, web: Q16-Q17）。ユーザーの回答を待機中。"
+**Context**: Functional Design - Step 1-4, plan and questions created for all units
+
+---
+
+## Functional Design - User Answers Received
+**Timestamp**: 2026-04-30T02:10:00Z
+**User Input**: "完了"
+**AI Response**: "質問ファイルの回答を読み込み、分析開始"
+**Context**: Functional Design - Reading user answers from functional-design-questions.md
+
+### Answer Summary:
+- Q1: C — HP=100, かしこさ=0, きずな=0, きぶん=50（完全にゼロからスタート）
+- Q2: D — AI-DLCに任せる（バランスの良い値を提案してほしい）→ 提案が必要
+- Q3: B — 各段階3種類（パラメータの最も高い値に応じて3方向に分岐）
+- Q4: X — 独自案「EXP累積量からレベル算出（必要EXP = 100 × LV^1.5）」。よりよい案があれば提示を希望 → 提案が必要
+- Q5: D — AI-DLCに任せる。ただし話しかけ=+100、hook=+10を想定 → 提案が必要
+- Q6: D — AI-DLCに任せる（24時間死亡ルールとバランスの取れた速度を提案）→ 提案が必要
+- Q7: A — クールダウンなし（連打可能、HP減少でバランス）
+- Q8: A — リアルタイム更新（1秒ごと）
+- Q9: B — 複数行AAアート（5〜10行）。進化で大きくなる。AAイメージの提示を希望 → 提案が必要
+- Q10: C — 話しかけ=100EXP、hook=10EXP（1/10比率）
+- Q11: C — カスタムテーマ。キャラごとの拡張性を担保
+- Q12: D — AI-DLCに任せる → 提案が必要
+- Q13: D — AI-DLCに任せる → 提案が必要
+- Q14: A — 短い（30文字程度）
+- Q15: A — 永久保持
+- Q16: A — ゆるい・かわいい系（パステルカラー、丸みのあるデザイン）
+- Q17: A — 最小限（ペット名・レベル・進化段階のみ）
+
+### Analysis:
+- Q2, Q4, Q5, Q6, Q9, Q12, Q13で提案が求められている
+- Q4: ユーザーが「必要EXP = 100 × LV^1.5」を提案。評価・改善案の提示が必要
+- Q5: ユーザーが話しかけ=100, hook=10を想定。これをベースに設計提案が必要
+- Q9: AAアートのイメージ提示が求められている
+- 矛盾なし。全回答が整合的
+- 提案が必要な項目が多いため、提案を含む設計ドキュメントで対応する（追加質問ファイルは不要）
+
+---
+
+## Functional Design - Artifacts Generated (All Units)
+**Timestamp**: 2026-04-30T02:30:00Z
+**AI Response**: "全5ユニットの機能設計ドキュメントを生成完了。"
+**Context**: Functional Design - Step 6-22, all unit functional design artifacts generated
+
+### Generated Artifacts:
+
+**shared (Unit 1):**
+- aidlc-docs/construction/shared/functional-design/domain-entities.md — ドメインエンティティ定義（Pet, Stage, EvolutionType, API型）
+- aidlc-docs/construction/shared/functional-design/business-rules.md — ビジネスルール（BR-01〜BR-18: パラメータ制約、EXP、進化、死亡、保存、認証、バリデーション）
+- aidlc-docs/construction/shared/functional-design/business-logic-model.md — ビジネスロジックモデル（バリデーション関数、PBTプロパティ）
+
+**cli (Unit 2):**
+- aidlc-docs/construction/cli/functional-design/business-logic-model.md — PetEngine, TimeCalculator, ExpCalculator, EvolutionManager の詳細ロジック
+- aidlc-docs/construction/cli/functional-design/business-rules.md — ビジネスルール（BR-CLI-01〜BR-CLI-15: 話しかけ、時間経過、死亡、描画、カラー、AA）
+- aidlc-docs/construction/cli/functional-design/domain-entities.md — cli固有型定義、PBTプロパティ
+- aidlc-docs/construction/cli/functional-design/frontend-components.md — TUI画面構成、キーバインド、レイアウト、bubbletea メッセージ、Theme
+
+**cdk (Unit 3):**
+- aidlc-docs/construction/cdk/functional-design/business-logic-model.md — スタック構成、DynamoDBテーブル設計、命名規則、PBTプロパティ
+- aidlc-docs/construction/cdk/functional-design/business-rules.md — インフラ構成ルール（BR-CDK-01〜BR-CDK-09）
+
+**backend (Unit 4):**
+- aidlc-docs/construction/backend/functional-design/business-logic-model.md — Handler処理フロー、AIService、PetService、PBTプロパティ
+- aidlc-docs/construction/backend/functional-design/business-rules.md — API処理ルール（BR-BE-01〜BR-BE-15）
+- aidlc-docs/construction/backend/functional-design/domain-entities.md — DynamoDB Item構造、アクセスパターン
+
+**web (Unit 5):**
+- aidlc-docs/construction/web/functional-design/business-logic-model.md — ページ構成、デザインルール、PBTプロパティ
+- aidlc-docs/construction/web/functional-design/business-rules.md — 認証・デバイス認証・ダウンロード・セキュリティルール（BR-WEB-01〜BR-WEB-12）
+- aidlc-docs/construction/web/functional-design/frontend-components.md — ページコンポーネント設計、ルーティング、API通信、アクセシビリティ
+
+### Key Design Decisions (提案項目):
+- Q2 進化レベル: たまご→こども Lv5、こども→おとな Lv15（ゲームバランス考慮）
+- Q4 EXPカーブ: ユーザー提案の 100×LV^1.5 を採用（バランス良好）
+- Q5 EXP獲得量: 話しかけ=100EXP（固定）、hook=10EXP（固定）
+- Q6 パラメータ変動速度: HP -3/h, きずな -2/h, かしこさ -0.5/h, きぶん -1/h
+- Q9 AAキャラクター: たまご3行、こども5行、おとな8行。進化で大きくなる設計
+- Q12 最小ターミナルサイズ: 80x24（標準最小サイズ）
+- Q13 AI応答トーン: パラメータ値を直接プロンプトに埋め込み、AIに自然なトーン調整を委ねる方式
+
+### Extension Compliance:
+- **Security Baseline**: 全ルール準拠（SECURITY-01〜15の該当項目を各ユニットのビジネスルールに反映）
+- **PBT (Full)**: PBT-01準拠（全ユニットでテスト可能プロパティを特定・文書化）
+
+---
+
+## Functional Design - Approval Prompt
+**Timestamp**: 2026-04-30T02:31:00Z
+**AI Response**: "機能設計完了メッセージを表示。ユーザーの承認を待機中。"
+**Context**: Functional Design - Step 7 (all units), awaiting user approval
+
+---
+
+## Functional Design - Change Request (Evolution Types)
+**Timestamp**: 2026-04-30T02:35:00Z
+**User Input**: "おとな段階を7種類用意したい。・こども段階の3種類に対してそれぞれ2種類ずつパラメータに応じて分岐・すべてのパラメータが低い場合は育成失敗パターンとして1種類用意"
+**AI Response**: "おとな段階の進化先を7種類に拡張。こども3種×2分岐=6種+育成失敗1種。関連ドキュメントを更新。"
+**Context**: Functional Design - User requested expansion of adult evolution types from 3 to 7
+
+---
+
+## Functional Design - Change Request (Evolution Parameters)
+**Timestamp**: 2026-04-30T02:40:00Z
+**User Input**: "こども段階とおとな段階について、分岐の判定に使用するパラメータは、体力ではなくきぶんがいいと思う。体力は「話しかける」ボタンと連動する単一の指標であり、進化の条件には含めないようにしたい。よりよい案があれば提示して"
+**AI Response**: "案A（かしこさ・きずな・きぶんの3パラメータで判定）と案B（きぶん安定化処理追加）を提示。案Aを推奨。"
+**Context**: Functional Design - User requested HP removal from evolution criteria, replace with kibun
+
+---
+
+## Functional Design - Change Request Approval
+**Timestamp**: 2026-04-30T02:42:00Z
+**User Input**: "案Aで実装して"
+**AI Response**: "案Aで全ドキュメントを更新。進化判定パラメータをHP→きぶんに変更。こどもタイプにmoodを追加、おとなタイプにtrickster/free-spiritを追加。育成失敗の閾値もきぶんベースに変更。"
+**Context**: Functional Design - Implementing Option A across all documents
+
+---
+
+## Functional Design - Change Request (EXP System + Evolution Levels)
+**Timestamp**: 2026-04-30T02:50:00Z
+**User Input**: "案3で実装して。こどもになるレベルを10にして。おとなになるレベルを20にして。"
+**AI Response**: "EXP累積方式を案3（差分直接定義+段階加速）に変更。進化レベルをLv10（こども）/Lv20（おとな）に変更。全ドキュメントを更新。"
+**Context**: Functional Design - Changing EXP system to Option 3 with evolution at Lv10/Lv20
+
+---
+
+## Functional Design - Change Request (Local Storage Path)
+**Timestamp**: 2026-04-30T02:55:00Z
+**User Input**: "BR-12: ローカル保存について、linuxを前提としていないか？windows対応を含めた場合の影響について調査して教えて"
+**AI Response**: "クロスプラットフォーム影響を調査。アプローチA（~/.devpet/ 統一）とアプローチB（OS標準パス）を比較提示。"
+**Context**: Functional Design - Cross-platform local storage path investigation
+
+---
+
+## Functional Design - Local Storage Path Decision
+**Timestamp**: 2026-04-30T02:56:00Z
+**User Input**: "アプローチAで対応する"
+**AI Response**: "BR-12を更新。filepath.Join(os.UserHomeDir(), '.devpet') によるクロスプラットフォーム対応を明記。各OSの実際のパスとパーミッション設定を追加。"
+**Context**: Functional Design - Updated BR-12 with cross-platform path resolution
+
+---
