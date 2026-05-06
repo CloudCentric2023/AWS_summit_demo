@@ -504,3 +504,21 @@
 **Context**: Functional Design - Updated BR-12 with cross-platform path resolution
 
 ---
+
+## Functional Design - User Question (Init Flow Remote Check)
+**Timestamp**: 2026-05-05T00:01:00Z
+**User Input**: "CLIのInit フローについて、ローカルにペット情報がなくリモートにペット情報がある場合はどうなる？"
+**AI Response**: "現在のInitフローではローカルデータなし→無条件で新規生成となり、リモートデータが無視される問題を指摘。案A（Init時リモートチェック追加）と案B（現状維持）を提示し、案Aを推奨。"
+**Context**: Functional Design - User identified gap in Init flow for remote data recovery scenario
+
+---
+
+## Functional Design - Change Request (Init Flow Remote Check)
+**Timestamp**: 2026-05-05T00:02:00Z
+**User Input**: "案Aで対応して"
+**AI Response**: "Initフローにリモートチェックを追加。business-logic-model.md のInitフローを更新し、shared/business-rules.md にBR-13a（リモート復元）を追加。"
+**Context**: Functional Design - Added remote data recovery to Init flow (Option A)
+
+---
+
+
