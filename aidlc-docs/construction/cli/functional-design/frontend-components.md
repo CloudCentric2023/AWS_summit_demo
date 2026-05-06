@@ -153,11 +153,11 @@ LV: 5  EXP: 1200/1500  Stage: こども (brain)
 
 ```go
 type ParameterDisplay struct {
-    hp        int
-    kashikosa int
-    kizuna    int
-    kibun     int
-    theme     *Theme
+    hp     int
+    wisdom int
+    bond   int
+    mood   int
+    theme  *Theme
 }
 ```
 

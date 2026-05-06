@@ -522,3 +522,19 @@
 ---
 
 
+
+## Functional Design - User Question (Romaji Naming)
+**Timestamp**: 2026-05-06T00:01:00Z
+**User Input**: "cdkについて、- kashikosa (Number) - kizuna (Number) - kibun (Number)は日本語のローマ字ではなく英語で設定した方が一貫性が保たれるのでは？"
+**AI Response**: "候補A（wisdom/bond/mood）と候補B（intelligence/affinity/spirit）を提示。候補Aを推奨。"
+**Context**: Functional Design - User identified inconsistency in parameter naming (romaji vs English)
+
+---
+
+## Functional Design - Change Request (Romaji to English)
+**Timestamp**: 2026-05-06T00:02:00Z
+**User Input**: "候補Aで全ドキュメントを統一して。また、他にもローマ字を使っている項目があれば列挙して"
+**AI Response**: "全ドキュメントでkashikosa→wisdom, kizuna→bond, kibun→moodに統一。対象ファイル: shared/domain-entities.md, shared/business-logic-model.md, shared/business-rules.md, cli/domain-entities.md, cli/frontend-components.md, cdk/business-logic-model.md, backend/domain-entities.md, backend/business-logic-model.md, inception/requirements/requirements.md, inception/application-design/component-methods.md。他にローマ字を使用している項目はなし。"
+**Context**: Functional Design - Unified parameter naming from romaji to English across all documents
+
+---

@@ -13,9 +13,9 @@ type Pet struct {
     Level             int        `json:"level"`
     Exp               int        `json:"exp"`               // 累積EXP
     HP                int        `json:"hp"`                 // 0-100
-    Kashikosa         int        `json:"kashikosa"`          // かしこさ 0-100
-    Kizuna            int        `json:"kizuna"`             // きずな 0-100
-    Kibun             int        `json:"kibun"`              // きぶん 0-100
+    Wisdom            int        `json:"wisdom"`             // かしこさ 0-100
+    Bond              int        `json:"bond"`               // きずな 0-100
+    Mood              int        `json:"mood"`               // きぶん 0-100
     LastInteractionAt time.Time  `json:"lastInteractionAt"`
     IsDead            bool       `json:"isDead"`
     DiedAt            *time.Time `json:"diedAt,omitempty"`
@@ -34,9 +34,9 @@ type Pet struct {
 | Level | 1 | レベル1からスタート |
 | Exp | 0 | EXP 0からスタート |
 | HP | 100 | 満タンからスタート |
-| Kashikosa | 0 | ゼロからスタート |
-| Kizuna | 0 | ゼロからスタート |
-| Kibun | 50 | 中間値（生まれたてはニュートラル） |
+| Wisdom | 0 | ゼロからスタート |
+| Bond | 0 | ゼロからスタート |
+| Mood | 50 | 中間値（生まれたてはニュートラル） |
 
 ---
 
@@ -192,10 +192,10 @@ type DeviceAuthPollResponse struct {
 
 ```go
 type ParamDelta struct {
-    HP        int `json:"hp"`
-    Kashikosa int `json:"kashikosa"`
-    Kizuna    int `json:"kizuna"`
-    Kibun     int `json:"kibun"`
+    HP     int `json:"hp"`
+    Wisdom int `json:"wisdom"`
+    Bond   int `json:"bond"`
+    Mood   int `json:"mood"`
 }
 ```
 

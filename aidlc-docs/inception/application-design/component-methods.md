@@ -192,9 +192,9 @@ type Pet struct {
     Level             int       `json:"level"`
     Exp               int       `json:"exp"`
     HP                int       `json:"hp"`
-    Kashikosa         int       `json:"kashikosa"` // かしこさ (0-100)
-    Kizuna            int       `json:"kizuna"`    // きずな (0-100)
-    Kibun             int       `json:"kibun"`     // きぶん (0-100)
+    Wisdom            int       `json:"wisdom"`    // かしこさ (0-100)
+    Bond              int       `json:"bond"`      // きずな (0-100)
+    Mood              int       `json:"mood"`      // きぶん (0-100)
     LastInteractionAt time.Time `json:"lastInteractionAt"`
     IsDead            bool      `json:"isDead"`
     DiedAt            *time.Time `json:"diedAt,omitempty"`

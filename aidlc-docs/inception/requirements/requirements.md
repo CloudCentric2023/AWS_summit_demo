@@ -229,9 +229,9 @@ devpetは以下の3つのコンポーネントで構成される：
 - level
 - exp
 - hp
-- kashikosa (かしこさ)
-- kizuna (きずな)
-- kibun (きぶん)
+- wisdom (かしこさ)
+- bond (きずな)
+- mood (きぶん)
 - lastInteractionAt
 - isDead
 - diedAt (死亡時のみ)

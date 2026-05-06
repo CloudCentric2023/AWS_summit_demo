@@ -15,9 +15,9 @@ type PetItem struct {
     Level             int    `dynamodbav:"level"`
     Exp               int    `dynamodbav:"exp"`
     HP                int    `dynamodbav:"hp"`
-    Kashikosa         int    `dynamodbav:"kashikosa"`
-    Kizuna            int    `dynamodbav:"kizuna"`
-    Kibun             int    `dynamodbav:"kibun"`
+    Wisdom            int    `dynamodbav:"wisdom"`
+    Bond              int    `dynamodbav:"bond"`
+    Mood              int    `dynamodbav:"mood"`
     LastInteractionAt string `dynamodbav:"lastInteractionAt"` // ISO 8601
     IsDead            bool   `dynamodbav:"isDead"`
     DiedAt            string `dynamodbav:"diedAt,omitempty"`   // ISO 8601

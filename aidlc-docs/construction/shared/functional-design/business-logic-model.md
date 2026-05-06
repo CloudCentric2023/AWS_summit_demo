@@ -22,7 +22,7 @@ sharedが提供するのは以下のみ:
 3. Stage が有効な値であること（egg/child/adult）
 4. Level が 1以上であること
 5. Exp が 0以上であること
-6. HP, Kashikosa, Kizuna, Kibun が 0〜100の範囲であること
+6. HP, Wisdom, Bond, Mood が 0〜100の範囲であること
 7. IsDead=true の場合、DiedAt が nil でないこと
 8. LastInteractionAt が未来の時刻でないこと
 ```

@@ -19,10 +19,10 @@ type TalkResult struct {
 ### ParamDelta（cli内部用、詳細版）
 ```go
 type ParamDelta struct {
-    HP        float64 // 小数点精度で計算し、適用時にintに変換
-    Kashikosa float64
-    Kizuna    float64
-    Kibun     float64
+    HP     float64 // 小数点精度で計算し、適用時にintに変換
+    Wisdom float64
+    Bond   float64
+    Mood   float64
 }
 ```
 
